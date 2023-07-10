@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+* {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 22px;
+}
+#sector1{
+    background-color: #61bb46;
+}
+#sector2{
+    background-color: #fdb827;
+}
+#sector3{
+    background-color: #4200dc;
+}
+#sector4{
+    background-color: #e03a3e;
+}
+#sector5{
+    background-color: #A6DC00;
+}
+#sector6{
+    background-color: #009ddc;
+}
+#sector7{
+    background-color: #f5821f;
+}
+#sector8{
+    background-color: #00DCC5;
+}
+#sector9{
+    background-color: #00DC0C;
+}
+#sector10{
+    background-color: #800000;
+}
+#sector11{
+    background-color: #963d97;
+}
+#sector12{
+    background-color: #DC1B00;
+}
+.check-color {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 20px;
+    left: 197.5px;
+    pointer-events: none;
+    z-index: 50;
+
+}
+
+.result-container {
+    margin-top: 20px;
+    color: #fff;
+    position: absolute;
+    display: block;
+    align-items: center;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container .spin-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    display: flex;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 4px solid rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    user-select: none;
+    color: #333;
+
+}
+
+.container .spin-btn::before {
+    content: '';
+    position: absolute;
+    top: -205px;
+    width: 20px;
+    height: 50px;
+    background-color: #fff;
+    clip-path: polygon(20% 0, 50% 100%, 80% 0);
+}
+
+.container .wheel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 0 5px #333,
+        0 0 0 15px #fff,
+        0 0 0 18px #6f23c6;
+    transition: transform 5s ease-in-out;
+}
+
+.container .wheel .sector {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(30deg*var(--i)));
+    clip-path: polygon(0 0, 41.2% 0, 100% 100%, 0 41.2%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+.container .wheel .sector span {
+    position: relative;
+    transform: rotate(45deg);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+}
