@@ -124,8 +124,12 @@ function spinWheel() {
         }
 
         const winSector = sectors[winIndex];
-        const winSectorColor = winSector.style.backgroundColor;
-        checkColor.style.backgroundColor = winSectorColor;
+        winSector.classList.add('flashing');
+        setTimeout(() => {
+            // Remove the flashing class after the animation completes
+            winSector.classList.remove('flashing');
+        }, 2000);
+
     }, 5500);
 
 }

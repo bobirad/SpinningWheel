@@ -170,3 +170,16 @@ body {
     color: #fff;
     text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
 }
+
+@keyframes flash {
+    0% {
+      background-color: inherit;
+    }
+    100% {
+      background-color: rgb(206, 175, 245);
+    }
+  }
+  
+  .flashing {
+    animation: flash 0.2s infinite;
+  }
