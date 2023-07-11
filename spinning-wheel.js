@@ -74,7 +74,6 @@ function spinWheel() {
 
     console.log(winIndex)
     lastWinIndex = winIndex;
-    let randomNumber1 = Math.floor(Math.random() * 10) + 1;
     let randomNumber2 = Math.floor(Math.random() * 29) + 1;
 
     rotationAngle += (360 - (winIndex * 30) + randomNumber2 + (spinCount * 3 * 360));

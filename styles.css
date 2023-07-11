@@ -52,12 +52,18 @@
 }
 
 .result-container {
-    margin-top: 20px;
+    margin-left: 30px;
     color: #fff;
     position: absolute;
-    display: block;
+    display: inline-block;
     align-items: center;
-
+    border: solid #fff 2px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.result-container2 {
+    position: absolute;
+    display: flex;
 }
 
 body {
@@ -67,7 +73,10 @@ body {
     min-height: 100vh;
     background-color: #333;
 }
-
+.container-all{
+    display: inline-block;
+    position: relative;
+}
 .container {
     width: 400px;
     height: 400px;
