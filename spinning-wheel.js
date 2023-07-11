@@ -11,8 +11,12 @@ const sectors = Array.from(document.querySelectorAll('.sector'));
 const checkColor = document.querySelector('.check-color');
 const currentWin = document.querySelector('.current-win');
 const totalWin = document.querySelector('.total-win');
+const spinsLeftEl = document.querySelector('.spins-left');
 
 let remainingSpins = 10;
+spinsLeftEl.textContent = remainingSpins;
+
+
 let consecutiveWins = 0;
 let lastWinIndex = -1;
 let totalWins = 0;
@@ -57,6 +61,9 @@ let rotationAngle = 0;
 let spinCount = 0;
 
 function spinWheel() {
+    remainingSpins--;
+    spinsLeftEl.textContent = remainingSpins;
+
     spinCount++;
     console.log("remaining spins:", remainingSpins);
     spinButton.disabled = true;
@@ -86,8 +93,6 @@ function spinWheel() {
     setTimeout(() => {
         spinButton.disabled = false;
 
-        remainingSpins--;
-
         const sectorValue = sectors[winIndex].querySelector('span').textContent;
         console.log(sectors[winIndex]);
         currentWin.textContent = sectorValue;
@@ -98,6 +103,8 @@ function spinWheel() {
         if (sectorValue === 'Free Spins') {
             freeSpinsRemaining += 3;
             remainingSpins += 3;
+            spinsLeftEl.textContent = remainingSpins;
+
             autoSpin();
         } else {
             consecutiveWins = 0;
